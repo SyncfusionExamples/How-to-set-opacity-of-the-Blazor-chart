@@ -1,14 +1,14 @@
 # How-to-set-opacity-of-the-Blazor-chart
 
-This article explains how to set opacity of the blazor chart component.
+This article explains how to set opacity of the Blazor Chart Component.
 
-**Changing the Opacity of the Blazor chart using Opacity property**
+**Changing the Opacity of the Blazor chart**
 
 [Blazor Charts](https://www.syncfusion.com/blazor-components/blazor-charts) provides support to change the opacity of series color. By setting, the [Opacity](https://help.syncfusion.com/cr/blazor/Syncfusion.Blazor.Charts.ChartSeries.html#Syncfusion_Blazor_Charts_ChartSeries_Opacity) property of series value between 0 and 1, you can change the opacity of series color.
 
 The following code example illustrates this.
 
-**C#**
+**Index.razor**
 
 ```cshtml
 
