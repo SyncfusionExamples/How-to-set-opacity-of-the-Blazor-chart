@@ -1,73 +1,79 @@
-# How-to-set-opacity-of-the-Blazor-chart
+# How to Set Opacity in a Syncfusion Blazor Chart
 
-This article explains how to set opacity of the Blazor Chart Component.
+## Overview
 
-**Changing the Opacity of the Blazor chart**
+This sample demonstrates how to customize the transparency of a chart series in Syncfusion [Blazor Charts](https://www.syncfusion.com/blazor-components/blazor-charts). The implementation renders a `SplineArea` series using the `SfChart` component and applies transparency through the `ChartSeries.Opacity` property.
 
-[Blazor Charts](https://www.syncfusion.com/blazor-components/blazor-charts) provides support to change the opacity of series color. By setting, the [Opacity](https://help.syncfusion.com/cr/blazor/Syncfusion.Blazor.Charts.ChartSeries.html#Syncfusion_Blazor_Charts_ChartSeries_Opacity) property of series value between 0 and 1, you can change the opacity of series color.
+The sample binds a strongly typed collection of country-based data to the chart and displays the series using a semi-transparent green fill. Adjusting series opacity is useful when visualizing overlapping chart elements, improving readability, and highlighting important data without completely obscuring underlying chart content.
 
-The following code example illustrates this.
+## Key Features
 
-**Index.razor**
+- Uses the `SfChart` component to render chart data.
+- Configures a category-based X-axis using `ChartPrimaryXAxis`.
+- Binds chart data through the `ChartSeries.DataSource` property.
+- Maps category and value fields using `XName="X"` and `YName="Y"`.
+- Demonstrates transparency customization using `ChartSeries.Opacity="0.5"`.
+- Applies a custom series fill color using `Fill="Green"`.
+- Renders the data as a `ChartSeriesType.SplineArea` series.
+- Configures a visible series outline using `ChartSeriesBorder`.
+- Sets the series border width using `Width="2"`.
+- Sets the series border color using `Color="black"`.
+- Uses a strongly typed `ChartData` model containing `X` and `Y` properties.
+- Demonstrates how opacity values between `0` and `1` affect chart series appearance.
 
-```cshtml
+## Prerequisites
 
-@using Syncfusion.Blazor.Charts
+- [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)
+- [.NET SDK](https://dotnet.microsoft.com/en-us/download/dotnet) compatible with the project's target framework
 
-<SfChart Title="Olympic Medals">
+## How to Run the Project
 
-    <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category"></ChartPrimaryXAxis>
+**Visual Studio 2022**
 
-    <ChartSeriesCollection>
-        <ChartSeries DataSource="@MedalDetails" XName="X" YName="Y" Opacity="0.5" Fill="Green" Type="ChartSeriesType.SplineArea">
-            <ChartSeriesBorder Width="2" Color="black"></ChartSeriesBorder>
-        </ChartSeries>
-    </ChartSeriesCollection>
-    
-</SfChart>
+1. Clone or download this repository.
+2. Open the following project file:
 
-@code {
+   `ChartOpacity/ChartOpacity.csproj`
 
-    public class ChartData
-    {
-        public string X { get; set; }
-        public double Y { get; set; }
-    }
+3. Restore NuGet packages.
+4. Build the project.
+5. Run the application using **Ctrl+F5**.
 
-    public List<ChartData> MedalDetails = new List<ChartData>
-    {
-        new ChartData { X= "South Korea", Y= 39.4 },
-        new ChartData { X= "India", Y= 61.3 },
-        new ChartData { X= "Pakistan", Y= 20.4 },
-        new ChartData { X= "Germany", Y= 65.1 },
-        new ChartData { X= "Australia", Y= 15.8 },
-        new ChartData { X= "Italy", Y= 29.2 },
-        new ChartData { X= "United Kingdom", Y= 44.6 },
-        new ChartData { X= "Saudi Arabia", Y= 9.7 },
-        new ChartData { X= "Russia", Y= 40.8 },
-        new ChartData { X= "Mexico", Y= 31 },
-        new ChartData { X= "Brazil", Y= 75.9 },
-        new ChartData { X= "China", Y= 51.4 }
-    };
-}
+**Visual Studio Code**
 
+1. Clone or download this repository.
+2. Open the repository folder in Visual Studio Code.
+3. Open the integrated terminal.
+4. Navigate to the project directory:
+
+```bash
+cd ChartOpacity
 ```
 
-The following screenshot illustrate the output of the above code snippet.
+5. Restore NuGet packages:
 
-**Output:**
+```bash
+dotnet restore
+```
 
-![](/opacity.png)
+6. Run the application:
 
-**Conclusion**
+```bash
+dotnet run
+```
 
-I hope you enjoyed learning how to set opacity of Blazor Chart Component.
+7. Open the local application URL displayed in the terminal after the application starts.
 
-You can refer to our [Blazor Chart feature tour](https://www.syncfusion.com/blazor-components/blazor-charts) page to know about its other groundbreaking feature representations and [documentation](https://blazor.syncfusion.com/documentation/chart/getting-started), and how to quickly get started for configuration specifications. You can also explore our [Blazor Chart example](https://blazor.syncfusion.com/demos/chart/line?theme=bootstrap5) to understand how to create and manipulate data.
+## Project Structure
 
-For current customers, you can check out our components from the [License and Downloads](https://www.syncfusion.com/sales/teamlicense) page. If you are new to Syncfusion, you can try our 30-day [free trial](https://www.syncfusion.com/downloads/blazor) to check out our other controls.
+`ChartOpacity/Pages/Index.razor` — Hosts the Blazor Chart sample, defines the `ChartData` model, initializes the chart data source, and demonstrates opacity customization through the `ChartSeries.Opacity` property.
 
-If you have any queries or require clarifications, please let us know in the comments section below. You can also contact us through our [support forums](https://www.syncfusion.com/forums), [support portal](https://support.syncfusion.com/create), or [feedback portal](https://www.syncfusion.com/feedback/blazor-components?control=charts). We are always happy to assist you!
+## Support and Feedback
 
+- For general product questions, visit the [Syncfusion Community Forum](https://www.syncfusion.com/forums) or [Syncfusion Support](https://www.syncfusion.com/support).
+- To report an issue specific to this sample, open a GitHub issue in this repository.
+- Official documentation for the `Opacity` property in Blazor Charts: https://help.syncfusion.com/chart-sdk/blazor/charts/chart-types/spline-area#series-customization
 
+## License
 
+This is a Syncfusion sample project provided to demonstrate product usage. Review the [Syncfusion license terms](https://www.syncfusion.com/sales/pricing?category=ui-components) before using Syncfusion components in your own applications.
